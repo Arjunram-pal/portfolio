@@ -1,0 +1,56 @@
+<nav class="navbar">
+
+  <ul class="navbar-list">
+
+    <li class="navbar-item">
+      <a href="/about" class="navbar-link {% if active_page == 'about' %}active{% endif %}">
+        About
+      </a>
+    </li>
+
+    <li class="navbar-item">
+      <a href="/resume" class="navbar-link {% if active_page == 'resume' %}active{% endif %}">
+        Resume
+      </a>
+    </li>
+
+    <li class="navbar-item">
+      <a href="/blog" class="navbar-link {% if active_page == 'blog' %}active{% endif %}">
+        Blog
+      </a>
+    </li>
+
+    <li class="navbar-item">
+      <a href="/daily-routine" class="navbar-link {% if active_page == 'daily' %}active{% endif %}">
+        Daily Routine
+      </a>
+    </li>
+
+    <li class="navbar-item">
+      <a href="/contact" class="navbar-link {% if active_page == 'contact' %}active{% endif %}">
+        Contact
+      </a>
+    </li>
+
+    {% if is_admin %}
+    <li class="navbar-item">
+      <a href="/admin/settings" class="navbar-link {% if active_page == 'settings' %}active{% endif %}">
+        Account
+      </a>
+    </li>
+    <li class="navbar-item">
+      <a href="/logout" class="navbar-link">
+        Logout
+      </a>
+    </li>
+    {% else %}
+    <li class="navbar-item">
+      <a href="/login" class="navbar-link {% if active_page == 'login' %}active{% endif %}">
+        Admin Login
+      </a>
+    </li>
+    {% endif %}
+
+  </ul>
+
+</nav>

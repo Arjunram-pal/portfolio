@@ -1,0 +1,269 @@
+{% extends "base.html" %}
+
+{% block title %}About - AI Train{% endblock %}
+
+{% block content %} 
+ 
+    <aside class="sidebar" data-sidebar>
+
+        <div class="sidebar-info">
+  
+          <figure class="avatar-box">
+            <img src="{{ url_for('static', path='images/my-avatar.png')}}" alt="Richard hanrick" width="80">
+          </figure>
+  
+          <div class="info-content">
+            <h1 class="name" title="Arjunram Pal">Arjunram Pal</h1>
+  
+            <p class="title">Data Engineer</p>
+          </div>
+  
+          <button class="info_more-btn" data-sidebar-btn>
+            <span>Show Contacts</span>
+  
+            <ion-icon name="chevron-down"></ion-icon>
+          </button>
+  
+        </div>
+  
+        <div class="sidebar-info_more">
+  
+          <div class="separator"></div>
+  
+          <ul class="contacts-list">
+  
+            <li class="contact-item">
+  
+              <div class="icon-box">
+                <ion-icon name="mail-outline"></ion-icon>
+              </div>
+  
+              <div class="contact-info">
+                <p class="contact-title">Email</p>
+  
+                <a href="mailto:arjunp087461@gmail.com" class="contact-link">arjunp087461@gmail.com</a>
+              </div>
+  
+            </li>
+  
+            <li class="contact-item">
+  
+              <div class="icon-box">
+                <ion-icon name="phone-portrait-outline"></ion-icon>
+              </div>
+  
+              <div class="contact-info">
+                <p class="contact-title">Phone</p>
+  
+                <a href="tel:+917021344403" class="contact-link">+91 7021344403 </a>
+              </div>
+  
+            </li>
+  
+            <li class="contact-item">
+  
+              <div class="icon-box">
+                <ion-icon name="calendar-outline"></ion-icon>
+              </div>
+  
+              <div class="contact-info">
+                <p class="contact-title">Birthday</p>
+  
+                <time datetime="1982-06-23">Dec 09, 1999</time>
+              </div>
+  
+            </li>
+  
+            <li class="contact-item">
+  
+              <div class="icon-box">
+                <ion-icon name="location-outline"></ion-icon>
+              </div>
+  
+              <div class="contact-info">
+                <p class="contact-title">Location</p>
+  
+                <address>Bhadohi, Uttar Pradesh, India</address>
+              </div>
+  
+            </li>
+  
+          </ul>
+  
+          <div class="separator"></div>
+  
+          <ul class="social-list">
+  
+            <li class="social-item">
+              <a href="https://www.linkedin.com/in/arjunram-pal-2858211b4/" class="social-link">
+                <ion-icon name="logo-LinkedIn"></ion-icon>
+              </a>
+            </li>
+  
+            <li class="social-item">
+              <a href="https://github.com/Arjunram-pal" class="social-link">
+                <ion-icon name="logo-github"></ion-icon>
+              </a>
+            </li>
+  
+            <li class="social-item">
+              <a href="https://www.instagram.com/arjunram_paul/" class="social-link">
+                <ion-icon name="logo-instagram"></ion-icon>
+              </a>
+            </li>
+  
+          </ul>
+  
+        </div>
+  
+      </aside>
+
+ <div class="main-content">
+
+  {% include "navbar.html" %}
+
+  <article class="about active">
+  
+    <header>
+      <h2 class="h2 article-title">About me</h2>
+    </header>
+
+          <section class="about-text">
+            <p>
+              I am a passionate and detail-oriented Data Engineer with a strong foundation in computer science, mathematics, and data-driven problem-solving. 
+              My academic background and hands-on project experience have equipped me with expertise in programming languages like Python, SQL, and R, as well as a deep understanding of data structures, algorithms, and the mathematical principles behind machine learning and deep learning.
+            </p>
+            <p>
+              My job is to transform raw data into meaningful insights and build robust data pipelines that are efficient, scalable, and user-friendly. I ensure that data is not only accessible but also presented in a way that drives informed decision-making. By leveraging cutting-edge tools like Hadoop, Spark, and machine learning frameworks such as 
+              TensorFlow and Scikit-learn, I add a personal touch to every project, making sure the solutions are both functional and impactful.
+
+              From predicting academic stress among students to analyzing job satisfaction and performing sentiment analysis using BERT, I bring creativity and precision to every challenge. My aim is to deliver data-driven solutions that reflect your goals and identity in the most effective way. 
+              Let’s work together to turn your data into a powerful asset!
+            </p>
+          </section>
+
+    <!-- service section -->
+
+    <section class="service">
+  
+            <h3 class="h3 service-title">What i'm doing</h3>
+  
+            <ul class="service-list">
+  
+              <li class="service-item">
+  
+                <div class="service-icon-box">
+                  <img src="{{ url_for('static', path='images/icon-design.svg')}}
+                  " alt="design icon" width="40">
+                </div>
+  
+                <div class="service-content-box">
+                  <h4 class="h4 service-item-title">Data Integration</h4>
+  
+                  <p class="service-item-text">
+                    Integrating diverse data sources and ensuring seamless data flow across systems for accurate and accessible insights.
+                  </p>
+                </div>
+  
+              </li>
+  
+              <li class="service-item">
+  
+                <div class="service-icon-box">
+                  <img src="{{ url_for('static', path='images/icon-dev.svg')}}" alt="Web development icon" width="40">
+                </div>
+  
+                <div class="service-content-box">
+                  <h4 class="h4 service-item-title">Machine Learning & Analytics</h4>
+  
+                  <p class="service-item-text">
+                    Building and deploying machine learning models to extract actionable insights and drive data-driven decision-making.
+                  </p>
+                </div>
+  
+              </li>
+  
+              <li class="service-item">
+  
+                <div class="service-icon-box">
+                  <img src="{{ url_for('static', path='images/icon-app.svg')}}" alt="mobile app icon" width="40">
+                </div>
+  
+                <div class="service-content-box">
+                  <h4 class="h4 service-item-title">Data Visualization</h4>
+  
+                  <p class="service-item-text">
+                    Creating intuitive dashboards and reports to present complex data in a clear and actionable manner.
+                  </p>
+                </div>
+  
+              </li>
+  
+              <li class="service-item">
+  
+                <div class="service-icon-box">
+                  <img src="{{ url_for('static', path='images/icon-photo.svg')}}" alt="camera icon" width="40">
+                </div>
+  
+                <div class="service-content-box">
+                  <h4 class="h4 service-item-title">Photography</h4>
+  
+                  <p class="service-item-text">
+                    I love taking and editing photos—it's my hobby, and I enjoy creating high-quality, professional-level images in any category.
+                  </p>
+                </div>
+  
+              </li>
+  
+            </ul>
+  
+          </section>
+    <!-- modal section -->
+
+    <div class="modal-container" data-modal-container>
+  
+            <div class="overlay" data-overlay></div>
+  
+            <section class="testimonials-modal">
+  
+              <button class="modal-close-btn" data-modal-close-btn>
+                <ion-icon name="close-outline"></ion-icon>
+              </button>
+  
+              <div class="modal-img-wrapper">
+                <figure class="modal-avatar-box">
+                  <img src="{{ url_for('static', path='images/avatar-1.png')}}" alt="Daniel lewis" width="80" data-modal-img>
+                </figure>
+  
+                <img src="{{ url_for('static', path='images/icon-quote.svg')}}" alt="quote icon">
+              </div>
+  
+              <div class="modal-content">
+  
+                <h4 class="h3 modal-title" data-modal-title>Daniel lewis</h4>
+  
+                <time datetime="2021-06-14">14 June, 2021</time>
+  
+                <div data-modal-text>
+                  <p>
+                    Richard was hired to create a corporate identity. We were very pleased with the work done. She has a
+                    lot of experience
+                    and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt
+                    consectetur adipiscing
+                    elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
+                  </p>
+                </div>
+  
+              </div>
+  
+            </section>
+  
+          </div>
+    <!-- everything inside the about article -->
+     
+
+  </article>
+
+</div>
+
+{% endblock %}

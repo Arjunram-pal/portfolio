@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+
+{% block title %}Admin Login - AI Train{% endblock %}
+
+{% block content %}
+
+<div class="main-content">
+  {% include "navbar.html" %}
+
+  <article class="contact active">
+    <header>
+      <h2 class="h2 article-title">Admin Login</h2>
+    </header>
+
+    <section class="contact-form">
+      <h3 class="h3 form-title">Sign in as Admin</h3>
+
+      {% if error %}
+      <div class="auth-alert auth-alert-error" role="alert">{{ error }}</div>
+      {% endif %}
+
+      <form class="form" method="post" action="/login" data-auth-form>
+        <div class="input-wrapper">
+          <div class="auth-field">
+            <label for="login-username" class="auth-label">Username</label>
+            <input id="login-username" type="text" name="username" class="form-input" placeholder="Username" required minlength="3" autocomplete="username">
+            <p class="auth-inline-error" data-error-for="username" aria-live="polite"></p>
+          </div>
+          <div class="auth-field">
+              <label for="login-password" class="auth-label">Password</label>
+              <div class="password-input-wrap">
+              <input id="login-password" type="password" name="password" class="form-input" placeholder="Password" required autocomplete="current-password">
+              <button type="button" class="password-toggle-btn" data-toggle-password data-target="login-password" aria-label="Show password">Show</button>
+            </div>
+            <p class="auth-inline-error" data-error-for="password" aria-live="polite"></p>
+          </div>
+        </div>
+
+        <button class="form-btn" type="submit" data-submit-btn>
+          <ion-icon name="log-in-outline"></ion-icon>
+          <span>Login</span>
+        </button>
+      </form>
+    </section>
+  </article>
+</div>
+
+{% endblock %}
