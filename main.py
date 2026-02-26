@@ -19,7 +19,7 @@ import psycopg2
 from psycopg2.extras import RealDictCursor
 
 app = FastAPI()
-DATABASE_URL = os.getenv("DATABASE_URL", "postgresql://portfolio_arjunram_user:zawpXuGRfojQ4h9V3g9gtbUafJU8f1lF@dpg-d6cji5jh46gs73citlt0-a.oregon-postgres.render.com/portfolio_arjunram").strip()
+DATABASE_URL = os.getenv("DATABASE_URL", "postgresql://portfolio_arjunram_user:zawpXuGRfojQ4h9V3g9gtbUafJU8f1lF@dpg-d6cji5jh46gs73citlt0-a/portfolio_arjunram").strip()
 SESSION_SECRET = os.getenv("SESSION_SECRET", secrets.token_hex(32))
 ADMIN_USERNAME = os.getenv("ADMIN_USERNAME", "arjun")
 ADMIN_PASSWORD = os.getenv("ADMIN_PASSWORD", "arjun")
