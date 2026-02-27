@@ -5,7 +5,7 @@ import time
 import base64
 import hashlib
 import hmac
-from datetime import datetime
+from datetime import datetime ,timezone
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from typing import Any, Dict, List, Optional
@@ -23,6 +23,7 @@ DATABASE_URL = os.getenv("DATABASE_URL", "postgresql://portfolio_arjunram_user:z
 SESSION_SECRET = os.getenv("SESSION_SECRET", secrets.token_hex(32))
 ADMIN_USERNAME = os.getenv("ADMIN_USERNAME", "arjun")
 ADMIN_PASSWORD = os.getenv("ADMIN_PASSWORD", "arjun")
+APP_TIMEZONE = os.getenv("APP_TIMEZONE", "Asia/Kolkata")
 AUTH_COOKIE = "admin_auth"
 AUTH_MAX_AGE_SECONDS = 60 * 60 * 24
 PBKDF2_ITERATIONS = 200_000
@@ -174,7 +175,8 @@ def template_context(
     context: Dict[str, Any] = {
         "request": request,
         "active_page": active_page,
-        "is_admin": is_admin(request)
+        "is_admin": is_admin(request),
+         "app_timezone": APP_TIMEZONE
     }
     context.update(extra)
     return context
@@ -235,7 +237,7 @@ def init_db() -> None:
                     (
                         ADMIN_USERNAME,
                         hash_password(ADMIN_PASSWORD),
-                        datetime.now().isoformat()
+                        datetime.now(timezone.utc).isoformat()
                     )
                 )
 
