@@ -373,13 +373,13 @@ function parseTimestamp(value) {
     return new Date(raw);
   }
 
-  // Parse as local time when timezone is missing.
+  // Legacy rows may not include timezone; treat them as UTC.
   const match = raw.match(
     /^(\d{4})-(\d{2})-(\d{2})[T ](\d{2}):(\d{2}):(\d{2})/
   );
   if (match) {
     const [, y, m, d, hh, mm, ss] = match.map(Number);
-    return new Date(y, m - 1, d, hh, mm, ss);
+    return new Date(Date.UTC(y, m - 1, d, hh, mm, ss));
   }
 
   return new Date(raw);
