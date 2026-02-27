@@ -385,9 +385,12 @@ function parseTimestamp(value) {
   return new Date(raw);
 }
 
+const APP_TIMEZONE = document.body?.dataset?.timezone || "Asia/Kolkata";
+
 function formatDate(value) {
   const date = parseTimestamp(value);
-  return date.toLocaleDateString(undefined, {
+  return date.toLocaleDateString("en-IN", {
+    timeZone: APP_TIMEZONE,
     year: "numeric",
     month: "short",
     day: "2-digit"
@@ -396,7 +399,8 @@ function formatDate(value) {
 
 function formatTime(value) {
   const date = parseTimestamp(value);
-  return date.toLocaleString(undefined, {
+  return date.toLocaleString("en-IN", {
+    timeZone: APP_TIMEZONE,
     year: "numeric",
     month: "short",
     day: "2-digit",
