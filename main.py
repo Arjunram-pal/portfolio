@@ -5,7 +5,7 @@ import time
 import base64
 import hashlib
 import hmac
-from datetime import datetime ,timezone
+from datetime import datetime, timezone
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from typing import Any, Dict, List, Optional
@@ -38,6 +38,10 @@ def get_connection():
             "DATABASE_URL is not set. Configure PostgreSQL connection string."
         )
     return psycopg2.connect(DATABASE_URL)
+
+
+def utc_now_iso() -> str:
+    return datetime.now(timezone.utc).isoformat(timespec="seconds")
 
 
 class Post(BaseModel):
@@ -109,7 +113,7 @@ def update_admin_credentials(username: str, password_hash: str) -> None:
                 SET username = %s, password_hash = %s, updated_at = %s
                 WHERE id = 1
                 """,
-                (username, password_hash, datetime.now().isoformat())
+                (username, password_hash, utc_now_iso())
             )
 
 
@@ -237,7 +241,7 @@ def init_db() -> None:
                     (
                         ADMIN_USERNAME,
                         hash_password(ADMIN_PASSWORD),
-                        datetime.now(timezone.utc).isoformat()
+                        utc_now_iso()
                     )
                 )
 
@@ -519,7 +523,7 @@ def contact(request: Request):
 async def create_post(request: Request, post: Post) -> Dict[str, Any]:
     """Create a new daily routine post"""
     require_admin(request)
-    timestamp = datetime.now().isoformat()
+    timestamp = utc_now_iso()
     with get_connection() as conn:
         with conn.cursor() as cursor:
             cursor.execute(
@@ -544,7 +548,7 @@ async def add_reply(
 ) -> Dict[str, Any]:
     """Add a reply to a post"""
     require_admin(request)
-    timestamp = datetime.now().isoformat()
+    timestamp = utc_now_iso()
     with get_connection() as conn:
         with conn.cursor() as cursor:
             cursor.execute(
@@ -584,7 +588,7 @@ async def contact(contact: ContactMessage) -> Dict[str, str]:
 async def create_blog(request: Request, blog: BlogPost) -> Dict[str, Any]:
     """Create a new blog post"""
     require_admin(request)
-    timestamp = datetime.now().isoformat()
+    timestamp = utc_now_iso()
     with get_connection() as conn:
         with conn.cursor() as cursor:
             cursor.execute(
@@ -616,7 +620,7 @@ async def update_blog(
 ) -> Dict[str, Any]:
     """Update a blog post"""
     require_admin(request)
-    timestamp = datetime.now().isoformat()
+    timestamp = utc_now_iso()
     with get_connection() as conn:
         with conn.cursor() as cursor:
             cursor.execute(
