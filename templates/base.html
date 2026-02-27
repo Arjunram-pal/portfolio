@@ -21,7 +21,7 @@
 
     
 </head>
-<body data-is-admin="{% if is_admin %}true{% else %}false{% endif %}">
+<body data-is-admin="{% if is_admin %}true{% else %}false{% endif %}" data-timezone="{{ app_timezone }}">
 
 <main>
     {% block content %}{% endblock %}
