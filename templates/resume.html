@@ -1,0 +1,322 @@
+{% extends "base.html" %}
+
+{% block title %}Resume - AI Train{% endblock %}
+
+{% block content %} 
+ 
+    <aside class="sidebar" data-sidebar>
+
+        <div class="sidebar-info">
+  
+          <figure class="avatar-box">
+            <img src="{{ url_for('static', path='images/my-avatar.png')}}" alt="Richard hanrick" width="80">
+          </figure>
+  
+          <div class="info-content">
+            <h1 class="name" title="Arjunram Pal">Arjunram Pal</h1>
+  
+            <p class="title">Data Engineer</p>
+          </div>
+  
+          <button class="info_more-btn" data-sidebar-btn>
+            <span>Show Contacts</span>
+  
+            <ion-icon name="chevron-down"></ion-icon>
+          </button>
+  
+        </div>
+  
+        <div class="sidebar-info_more">
+  
+          <div class="separator"></div>
+  
+          <ul class="contacts-list">
+  
+            <li class="contact-item">
+  
+              <div class="icon-box">
+                <ion-icon name="mail-outline"></ion-icon>
+              </div>
+  
+              <div class="contact-info">
+                <p class="contact-title">Email</p>
+  
+                <a href="mailto:arjunp087461@gmail.com" class="contact-link">arjunp087461@gmail.com</a>
+              </div>
+  
+            </li>
+  
+            <li class="contact-item">
+  
+              <div class="icon-box">
+                <ion-icon name="phone-portrait-outline"></ion-icon>
+              </div>
+  
+              <div class="contact-info">
+                <p class="contact-title">Phone</p>
+  
+                <a href="tel:+917021344403" class="contact-link">+91 7021344403 </a>
+              </div>
+  
+            </li>
+  
+            <li class="contact-item">
+  
+              <div class="icon-box">
+                <ion-icon name="calendar-outline"></ion-icon>
+              </div>
+  
+              <div class="contact-info">
+                <p class="contact-title">Birthday</p>
+  
+                <time datetime="1982-06-23">Dec 09, 1999</time>
+              </div>
+  
+            </li>
+  
+            <li class="contact-item">
+  
+              <div class="icon-box">
+                <ion-icon name="location-outline"></ion-icon>
+              </div>
+  
+              <div class="contact-info">
+                <p class="contact-title">Location</p>
+  
+                <address>Bhadohi, Uttar Pradesh, India</address>
+              </div>
+  
+            </li>
+  
+          </ul>
+  
+          <div class="separator"></div>
+  
+          <ul class="social-list">
+  
+            <li class="social-item">
+              <a href="https://www.linkedin.com/in/arjunram-pal-2858211b4/" class="social-link">
+                <ion-icon name="logo-LinkedIn"></ion-icon>
+              </a>
+            </li>
+  
+            <li class="social-item">
+              <a href="https://github.com/Arjunram-pal" class="social-link">
+                <ion-icon name="logo-github"></ion-icon>
+              </a>
+            </li>
+  
+            <li class="social-item">
+              <a href="https://www.instagram.com/arjunram_paul/" class="social-link">
+                <ion-icon name="logo-instagram"></ion-icon>
+              </a>
+            </li>
+  
+          </ul>
+  
+        </div>
+  
+      </aside>
+
+ <div class="main-content">
+
+  {% include "navbar.html" %}
+
+  <article class="resume active">
+  
+    <header>
+      <h2 class="h2 article-title">Resume</h2>
+    </header>
+
+          <section class="timeline">
+  
+            <div class="title-wrapper">
+              <div class="icon-box">
+                <ion-icon name="book-outline"></ion-icon>
+              </div>
+  
+              <h3 class="h3">Education</h3>
+            </div>
+  
+            <ol class="timeline-list">
+  
+              <li class="timeline-item">
+  
+                <h4 class="h4 timeline-item-title"> Banaras Hindu University(BHU) | Uttar Pradesh, India</h4>
+  
+                <span>2022 — 2024</span>
+  
+                <p class="timeline-text">
+                  Master of Science (M.Sc.)– Computational Science and Applications | CGPA: 8.6/10
+                </p>
+  
+              </li>
+  
+              <li class="timeline-item">
+  
+                <h4 class="h4 timeline-item-title"> Mumbai University | Maharashtra, India</h4>
+  
+                <span>2018 — 2021</span>
+  
+                <p class="timeline-text">
+                  Bachelor of Science (B.Sc.)– Computer Science | CGPA: 9.23/10
+                </p>
+  
+              </li>
+  
+              <li class="timeline-item">
+  
+                <h4 class="h4 timeline-item-title">Bhavan’s College | Maharashtra, India</h4>
+  
+                <span>2017 — 2018</span>
+  
+                <p class="timeline-text">
+                  Maharashtra State Board (12th) | 76 %
+                </p>
+  
+              </li>
+  
+            </ol>
+  
+          </section>
+  
+          <section class="timeline">
+  
+            <div class="title-wrapper">
+              <div class="icon-box">
+                <ion-icon name="book-outline"></ion-icon>
+              </div>
+  
+              <h3 class="h3">Project</h3>
+            </div>
+  
+            <ol class="timeline-list">
+  
+              <li class="timeline-item">
+  
+                <h4 class="h4 timeline-item-title"> Analyzing and Predicting Academic Stress among Students at BHU: A Comprehensive Study | Group Project</h4>
+                <span>Oct 2023- Feb 2024</span>
+  
+                <p style="text-align: center;" class="timeline-text">
+                  OR
+                </p>
+  
+              </li>
+  
+              <li class="timeline-item">
+  
+                <h4 class="h4 timeline-item-title">Analysis of Job Satisfaction, Stress Levels, and Happiness Among Teaching and Non-Teaching Staff at Banaras Hindu University
+                  (BHU) | Group Project</h4>
+                <p class="timeline-text">
+                  <i>Tech Stack: R, Python, Machine learning algorithms (Classification, Decision Trees, Logistic Regression, Multinomial Logistic Regression, Gradient
+                  Boosting Algorithms Chi-Square test, Bayesian approach with non-informative prior Cauchy distribution, etc.)</i>
+                </p>
+  
+                <span>Oct 2023- Jun 2024</span>
+  
+                <p class="timeline-text">
+                    <ul class="timeline-text">
+                    <li class="timeline-text">• Aimed to understand the key dimensions affecting academic stress, job satisfaction, and Happiness.</li>
+                    <li class="timeline-text">• Conducted primary data collection across various BHU facilities using online methods (Google Forms via Gmail, WhatsApp, etc.) and
+                    offline methods (hard copies).</li>
+                    <li class="timeline-text">• BHU students, teaching, and non-teaching staff to collect relevant demographic, workload, and satisfaction data.</li>
+                    <li class="timeline-text">• Data exploration using univariate and bivariate analysis techniques for deeper insights.</li>
+                    <li class="timeline-text">• Applied bootstrapping techniques to generate sample datasets for teaching staff to enhance the robustness of the analysis.</li>
+                    <li class="timeline-text">• Utilized Bayes' theorem with a non-informative prior (Cauchy distribution) to compare insights from the generated and original
+                    datasets.</li>
+                    <li class="timeline-text">• Employed Bayesian analysis alongside machine learning algorithms such as Decision Trees, Random Forest, Gradient Boosting, KNN,
+                    and Logistic Regression to infer the most significant attributes influencing stress and satisfaction among students, teaching staff, and
+                    non-teaching staff.</li>
+                  </p>
+                </ul>
+              </li>
+  
+              <li class="timeline-item">
+  
+                <h4 class="h4 timeline-item-title"> Sentimental Analysis on movies reviews using BERT</h4>
+                <p class="timeline-text">
+                <i>Tech Stack: Python, BERT, NLP, Pandas, Scikit-learn, TensorFlow</i>
+                 </p>
+                <span>Feb - Aug 2023</span>
+                <p class="timeline-text">
+                  <ul class="timeline-text">
+                  <li class="timeline-text">• Collected and preprocessed a dataset of 50,000 movie reviews from Kaggle.</li>
+                  <li class="timeline-text">• Cleaned and tokenized text data, and performed sentiment labeling.</li>
+                  <li class="timeline-text">• Implemented BERT for sentiment analysis and trained the model using TensorFlow.</li>
+                  <li class="timeline-text">• Evaluated model performance with Scikit-learn metrics and fine-tuned parameters for optimization.</li>
+                  <li class="timeline-text">• Visualized results and model performance using Matplotlib and Seaborn.</li>
+                </p>
+              </ul>
+              </li>
+  
+            </ol>
+  
+          </section>
+  
+          <section class="skill">
+  
+            <h3 class="h3 skills-title">My skills</h3>
+  
+            <ul class="skills-list content-card">
+  
+              <li class="skills-item">
+  
+                <div class="title-wrapper">
+                  <h5 class="h5">Machine Learning</h5>
+                  <data value="80">80%</data>
+                </div>
+  
+                <div class="skill-progress-bg">
+                  <div class="skill-progress-fill" style="width: 80%;"></div>
+                </div>
+  
+              </li>
+  
+              <li class="skills-item">
+  
+                <div class="title-wrapper">
+                  <h5 class="h5">NLP</h5>
+                  <data value="70">70%</data>
+                </div>
+  
+                <div class="skill-progress-bg">
+                  <div class="skill-progress-fill" style="width: 70%;"></div>
+                </div>
+  
+              </li>
+  
+              <li class="skills-item">
+  
+                <div class="title-wrapper">
+                  <h5 class="h5">Linear Algebra</h5>
+                  <data value="90">90%</data>
+                </div>
+  
+                <div class="skill-progress-bg">
+                  <div class="skill-progress-fill" style="width: 90%;"></div>
+                </div>
+  
+              </li>
+  
+              <li class="skills-item">
+  
+                <div class="title-wrapper">
+                  <h5 class="h5">Discrete mathematics</h5>
+                  <data value="50">50%</data>
+                </div>
+  
+                <div class="skill-progress-bg">
+                  <div class="skill-progress-fill" style="width: 50%;"></div>
+                </div>
+  
+              </li>
+  
+            </ul>
+  
+          </section>
+
+  </article>
+
+</div>
+
+{% endblock %}

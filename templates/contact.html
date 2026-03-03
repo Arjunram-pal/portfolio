@@ -1,0 +1,170 @@
+{% extends "base.html" %}
+
+{% block title %}Contact - AI Train{% endblock %}
+
+{% block content %}
+
+    <!--
+      - #SIDEBAR
+    -->
+
+    <aside class="sidebar" data-sidebar>
+
+        <div class="sidebar-info">
+  
+          <figure class="avatar-box">
+            <img src="{{ url_for('static', path='images/my-avatar.png')}}" alt="Richard hanrick" width="80">
+          </figure>
+  
+          <div class="info-content">
+            <h1 class="name" title="Arjunram Pal">Arjunram Pal</h1>
+  
+            <p class="title">Data Engineer</p>
+          </div>
+  
+          <button class="info_more-btn" data-sidebar-btn>
+            <span>Show Contacts</span>
+  
+            <ion-icon name="chevron-down"></ion-icon>
+          </button>
+  
+        </div>
+  
+        <div class="sidebar-info_more">
+  
+          <div class="separator"></div>
+  
+          <ul class="contacts-list">
+  
+            <li class="contact-item">
+  
+              <div class="icon-box">
+                <ion-icon name="mail-outline"></ion-icon>
+              </div>
+  
+              <div class="contact-info">
+                <p class="contact-title">Email</p>
+  
+                <a href="mailto:arjunp087461@gmail.com" class="contact-link">arjunp087461@gmail.com</a>
+              </div>
+  
+            </li>
+  
+            <li class="contact-item">
+  
+              <div class="icon-box">
+                <ion-icon name="phone-portrait-outline"></ion-icon>
+              </div>
+  
+              <div class="contact-info">
+                <p class="contact-title">Phone</p>
+  
+                <a href="tel:+917021344403" class="contact-link">+91 7021344403 </a>
+              </div>
+  
+            </li>
+  
+            <li class="contact-item">
+  
+              <div class="icon-box">
+                <ion-icon name="calendar-outline"></ion-icon>
+              </div>
+  
+              <div class="contact-info">
+                <p class="contact-title">Birthday</p>
+  
+                <time datetime="1982-06-23">Dec 09, 1999</time>
+              </div>
+  
+            </li>
+  
+            <li class="contact-item">
+  
+              <div class="icon-box">
+                <ion-icon name="location-outline"></ion-icon>
+              </div>
+  
+              <div class="contact-info">
+                <p class="contact-title">Location</p>
+  
+                <address>Bhadohi, Uttar Pradesh, India</address>
+              </div>
+  
+            </li>
+  
+          </ul>
+  
+          <div class="separator"></div>
+  
+          <ul class="social-list">
+  
+            <li class="social-item">
+              <a href="https://www.linkedin.com/in/arjunram-pal-2858211b4/" class="social-link">
+                <ion-icon name="logo-LinkedIn"></ion-icon>
+              </a>
+            </li>
+  
+            <li class="social-item">
+              <a href="https://github.com/Arjunram-pal" class="social-link">
+                <ion-icon name="logo-github"></ion-icon>
+              </a>
+            </li>
+  
+            <li class="social-item">
+              <a href="https://www.instagram.com/arjunram_paul/" class="social-link">
+                <ion-icon name="logo-instagram"></ion-icon>
+              </a>
+            </li>
+  
+          </ul>
+  
+        </div>
+  
+      </aside>
+
+  
+      <div class="main-content">
+      {% include "navbar.html" %}
+ 
+        <article class="contact active">
+  
+          <header>
+            <h2 class="h2 article-title">Contact</h2>
+          </header>
+  
+          <section class="mapbox" data-mapbox>
+            <figure>
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3604.887771754607!2d82.63324457607926!3d25.375077524471635!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x398fdd5982ca35e9%3A0x25b12051512806d2!2sArjunram%20Pal!5e0!3m2!1sen!2sin!4v1741275124905!5m2!1sen!2sin"
+                width="400" height="300" loading="lazy"></iframe>
+            </figure>
+          </section>
+  
+          <section class="contact-form">
+  
+            <h3 class="h3 form-title">Contact Form</h3>
+  
+            <form class="form" data-form>
+  
+              <div class="input-wrapper">
+                <input type="text" name="fullname" class="form-input" placeholder="Full name" required data-form-input>
+  
+                <input type="email" name="email" class="form-input" placeholder="Email address" required data-form-input>
+              </div>
+  
+              <textarea name="message" class="form-input" placeholder="Your Message" required data-form-input></textarea>
+  
+              <button class="form-btn" type="submit" disabled data-form-btn>
+                <ion-icon name="paper-plane"></ion-icon>
+                <span>Send Message</span>
+              </button>
+  
+            </form>
+  
+          </section>
+  
+        </article>
+  
+      </div>
+  
+{% endblock %}

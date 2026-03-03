@@ -1,0 +1,191 @@
+{% extends "base.html" %}
+
+{% block title %}Blog - AI Train{% endblock %}
+
+{% block content %} 
+ 
+    <aside class="sidebar" data-sidebar>
+
+        <div class="sidebar-info">
+  
+          <figure class="avatar-box">
+            <img src="{{ url_for('static', path='images/my-avatar.png')}}" alt="Richard hanrick" width="80">
+          </figure>
+  
+          <div class="info-content">
+            <h1 class="name" title="Arjunram Pal">Arjunram Pal</h1>
+  
+            <p class="title">Data Engineer</p>
+          </div>
+  
+          <button class="info_more-btn" data-sidebar-btn>
+            <span>Show Contacts</span>
+  
+            <ion-icon name="chevron-down"></ion-icon>
+          </button>
+  
+        </div>
+  
+        <div class="sidebar-info_more">
+  
+          <div class="separator"></div>
+  
+          <ul class="contacts-list">
+  
+            <li class="contact-item">
+  
+              <div class="icon-box">
+                <ion-icon name="mail-outline"></ion-icon>
+              </div>
+  
+              <div class="contact-info">
+                <p class="contact-title">Email</p>
+  
+                <a href="mailto:arjunp087461@gmail.com" class="contact-link">arjunp087461@gmail.com</a>
+              </div>
+  
+            </li>
+  
+            <li class="contact-item">
+  
+              <div class="icon-box">
+                <ion-icon name="phone-portrait-outline"></ion-icon>
+              </div>
+  
+              <div class="contact-info">
+                <p class="contact-title">Phone</p>
+  
+                <a href="tel:+917021344403" class="contact-link">+91 7021344403 </a>
+              </div>
+  
+            </li>
+  
+            <li class="contact-item">
+  
+              <div class="icon-box">
+                <ion-icon name="calendar-outline"></ion-icon>
+              </div>
+  
+              <div class="contact-info">
+                <p class="contact-title">Birthday</p>
+  
+                <time datetime="1982-06-23">Dec 09, 1999</time>
+              </div>
+  
+            </li>
+  
+            <li class="contact-item">
+  
+              <div class="icon-box">
+                <ion-icon name="location-outline"></ion-icon>
+              </div>
+  
+              <div class="contact-info">
+                <p class="contact-title">Location</p>
+  
+                <address>Bhadohi, Uttar Pradesh, India</address>
+              </div>
+  
+            </li>
+  
+          </ul>
+  
+          <div class="separator"></div>
+  
+          <ul class="social-list">
+  
+            <li class="social-item">
+              <a href="https://www.linkedin.com/in/arjunram-pal-2858211b4/" class="social-link">
+                <ion-icon name="logo-LinkedIn"></ion-icon>
+              </a>
+            </li>
+  
+            <li class="social-item">
+              <a href="https://github.com/Arjunram-pal" class="social-link">
+                <ion-icon name="logo-github"></ion-icon>
+              </a>
+            </li>
+  
+            <li class="social-item">
+              <a href="https://www.instagram.com/arjunram_paul/" class="social-link">
+                <ion-icon name="logo-instagram"></ion-icon>
+              </a>
+            </li>
+  
+          </ul>
+  
+        </div>
+  
+      </aside>
+
+ <div class="main-content">
+
+  {% include "navbar.html" %}
+
+ <article class="blog active">
+  
+    <header>
+      <h2 class="h2 article-title">Blog</h2>
+    </header>
+
+          {% if is_admin %}
+          <section class="blog-write-form">
+            <h3 class="h3 form-title">Write Your Blog</h3>
+            <form class="form" data-blog-form>
+              <div class="input-wrapper">
+                <input type="text" name="title" class="form-input" placeholder="Blog Title" required data-blog-input>
+                <input type="text" name="category" class="form-input" placeholder="Category (e.g., Technology, Design)" required data-blog-input>
+              </div>
+              <textarea name="content" class="form-input" placeholder="Write your blog content here..." required data-blog-input style="min-height: 200px;"></textarea>
+              <button class="form-btn" type="submit" data-blog-btn>
+                <ion-icon name="checkmark-outline"></ion-icon>
+                <span>Publish Blog</span>
+              </button>
+            </form>
+          </section>
+          {% else %}
+          <section class="content-card">
+            <p style="color: var(--light-gray);">
+              Blog publishing and editing are available only for admin.
+            </p>
+          </section>
+          {% endif %}
+  
+          <section class="blog-posts">
+                <h3 class="h3" style="margin-top: 30px; margin-bottom: 20px;">
+                    Your Blogs
+                </h3>
+
+                <ul class="blog-posts-list" id="blogs-container">
+
+                    {% if blogs %}
+                    {% for blog in blogs %}
+                        <li class="post-card">
+                        <h3>{{ blog.title }}</h3>
+                        <p><strong>Category:</strong> {{ blog.category }}</p>
+                        <p>{{ blog.content }}</p>
+                        <small>{{ blog.timestamp }}</small>
+                        </li>
+                    {% endfor %}
+                    {% else %}
+                    <p>No blogs yet.</p>
+                    {% endif %}
+
+                </ul>
+            </section>
+
+          <div class="blog-modal" id="blogModal" aria-hidden="true">
+            <div class="blog-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="blogModalTitle">
+              <button class="blog-modal-close" id="blogModalCloseBtn" type="button" aria-label="Close blog dialog">Close</button>
+              <h3 class="h3 blog-modal-title" id="blogModalTitle"></h3>
+              <p class="blog-modal-meta" id="blogModalMeta"></p>
+              <div class="blog-modal-content" id="blogModalContent"></div>
+            </div>
+          </div>
+
+
+  </article>
+
+</div>
+
+{% endblock %}
